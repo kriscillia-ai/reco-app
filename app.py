@@ -35,7 +35,7 @@ if st.button("Générer les recommandations"):
                 data = response.json()
                 st.success(f"Recommandations pour {data['user_id']}:")
                 for idx, rec in enumerate(data['recommendations'], 1):
-                    st.markdown(f"**#{idx}** : Article `{rec['article_id']}` (score: {rec['score']:.2f})")
+                    st.markdown(f"**#{idx}** : Article `{rec['article_id']}`")
             
             elif response.status_code == 404:
                 st.error(f"ID {user_input} non trouvé. Essayer : 5, 8, 10, etc.")
